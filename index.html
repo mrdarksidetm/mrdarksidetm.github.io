@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>The Forge Ecosystem - Forging Next-Gen Software</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>The Forge Ecosystem - Forging Next-Gen Software</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
                         primary: '#0061A4',
+                        'primary-dim': '#004689',
                         surface: '#FBF9F9',
                         'on-surface': '#313234',
                         'surface-container': '#EFEDEE'
@@ -27,119 +26,218 @@
                         'xl-card': '24px'
                     },
                     fontFamily: {
-                        headline: ["Public Sans", "sans-serif"],
-                        display: ["Public Sans", "sans-serif"],
-                        body: ["Public Sans", "sans-serif"],
-                        label: ["Public Sans", "sans-serif"]
+                        sans: ["Google Sans Flex", "Inter", "sans-serif"],
+                        emoji: ["iOS Emoji", "sans-serif"]
                     }
                 }
             }
         }
     </script>
-<style>
+    <style>
+        @font-face {
+            font-family: 'Google Sans Flex';
+            src: url('./fonts/google-sans-flex.ttf') format('truetype');
+            font-weight: 100 900;
+        }
+        @font-face {
+            font-family: 'iOS Emoji';
+            src: url('./fonts/ios-emoji.ttf') format('truetype');
+        }
         body {
             background-color: #FBF9F9;
             color: #313234;
-            font-family: 'Public Sans', sans-serif;
+            font-family: 'Google Sans Flex', sans-serif;
             -webkit-font-smoothing: antialiased;
+        }
+        .emoji {
+            font-family: 'iOS Emoji', sans-serif;
         }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 97, 164, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 97, 164, 0.03) 1px, transparent 1px);
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col bg-grid">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#FBF9F9]/80 backdrop-blur-md border-b border-slate-200/50">
-<div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
-<div class="text-2xl font-black tracking-tighter text-slate-900">The Forge</div>
-<div class="hidden md:flex items-center gap-8 font-['Public_Sans'] font-medium tracking-tight">
-<a class="text-slate-600 hover:text-blue-700 hover:bg-slate-100 rounded-full transition-all px-4 py-2" href="#">Portfolio</a>
-<a class="text-slate-600 hover:text-blue-700 hover:bg-slate-100 rounded-full transition-all px-4 py-2" href="#">WinForge</a>
-<a class="text-slate-600 hover:text-blue-700 hover:bg-slate-100 rounded-full transition-all px-4 py-2" href="#">Paisa Wallet</a>
-<a class="text-blue-700 font-bold border-b-2 border-blue-700 pb-1" href="#">Ecosystem</a>
-</div>
-<button class="bg-primary text-white font-medium rounded-full px-6 py-2.5 active:scale-95 duration-200 transition-transform">Get Started</button>
-</div>
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 p-2">
+                <img src="./logo.svg" alt="logo" class="w-full h-full" />
+            </div>
+            <div class="text-2xl font-black tracking-tighter text-slate-900">FORGE</div>
+        </div>
+        <div class="hidden md:flex items-center gap-6 font-medium tracking-tight">
+            <a class="text-slate-600 hover:text-primary transition-all px-3 py-2" href="https://mrdarksidetm.github.io">Portfolio</a>
+            <a class="text-slate-600 hover:text-primary transition-all px-3 py-2" href="https://github.com/mrdarksidetm/winforge">WinForge</a>
+            <a class="text-slate-600 hover:text-primary transition-all px-3 py-2" href="https://github.com/mrdarksidetm/wallet-flutter">Wallet</a>
+            <a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Ecosystem</a>
+        </div>
+        <a href="https://github.com/mrdarksidetm" target="_blank" class="bg-primary text-white font-bold rounded-full px-6 py-2.5 active:scale-95 duration-200 transition-transform shadow-lg shadow-primary/20">
+            Connect
+        </a>
+    </div>
 </nav>
-<!-- Main Content Canvas -->
-<main class="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto w-full flex flex-col gap-16">
-<!-- Hero Section -->
-<header class="text-center max-w-3xl mx-auto flex flex-col items-center gap-6 mt-12 mb-8">
-<h1 class="text-5xl md:text-7xl font-black tracking-tighter text-on-surface leading-tight">Forging Next-Gen <br/><span class="text-primary">Software</span></h1>
-<p class="text-xl md:text-2xl text-slate-600 font-medium tracking-tight">Beautifully Crafted, Powerfully Engineered.</p>
-<button class="mt-4 bg-on-surface text-surface rounded-full px-8 py-4 font-bold text-lg hover:bg-black transition-colors active:scale-95 duration-200">Explore Ecosystem</button>
-</header>
-<!-- Bento Grid Ecosystem -->
-<section class="grid grid-cols-1 md:grid-cols-12 gap-6 w-full auto-rows-[300px]">
-<!-- WinForge (Large spanning card) -->
-<div class="md:col-span-8 bg-surface-container rounded-xl-card p-10 flex flex-col justify-between overflow-hidden relative group cursor-pointer hover:shadow-lg transition-shadow">
-<div class="z-10 relative max-w-md">
-<span class="inline-flex items-center gap-2 bg-white/50 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary mb-4 uppercase tracking-wider">
-<span class="material-symbols-outlined text-[16px]" data-icon="desktop_windows">desktop_windows</span> Optimization
-                    </span>
-<h2 class="text-3xl font-black text-on-surface mb-2">WinForge</h2>
-<p class="text-slate-600 font-medium">Windows 11 elevated. Precision optimization tools wrapped in a stunning atelier interface. Reclaim your machine's true potential.</p>
-</div>
-<div class="absolute right-0 bottom-0 w-2/3 h-full bg-cover bg-center rounded-br-xl-card opacity-50 group-hover:opacity-80 transition-opacity duration-500 mask-image-linear" data-alt="abstract sleek silver metallic texture with blue neon light accents representing modern computing technology" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMPi-vLV-fjxAerzgOHOkmhjQduL9FejH5SnKCwghXGNZNNlHk041nRIs2g67NRCeVETlH3lDHVfdpIRUrCEJfmjh8cWolsRgD31JSTUVAOeyj3ebGKXensHAjL00SsYzpTPJkTdGULAvlPSBustnQ5-IwsKEnbfvzWTodNXC4UYeywqt4nuo4rPrJ0aSHTICzi1iwd2gI4vGiAozXKTpYsXnQNSEt0_urTeeJEVORAPVYg4Jl05SASOFA-NZziej986UT3sy7908');">
-</div>
-<div class="z-10 relative mt-auto self-start">
-<span class="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">
-                        Discover <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
-</span>
-</div>
-</div>
-<!-- Paisa Wallet (Tall card) -->
-<div class="md:col-span-4 md:row-span-2 bg-primary rounded-xl-card p-10 flex flex-col justify-between text-white overflow-hidden relative cursor-pointer hover:shadow-xl transition-shadow shadow-primary/20">
-<div class="z-10 relative">
-<span class="inline-flex items-center gap-2 bg-black/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold mb-4 uppercase tracking-wider">
-<span class="material-symbols-outlined text-[16px]" data-icon="account_balance_wallet">account_balance_wallet</span> Finance
-                    </span>
-<h2 class="text-3xl font-black mb-2">Paisa Wallet</h2>
-<p class="text-blue-100 font-medium">Premium local-first finance tracking. Your data, your device, beautifully visualized.</p>
-</div>
-<!-- Abstract visual representation -->
-<div class="relative w-full aspect-square mt-8 flex justify-center items-center z-10">
-<div class="w-full h-full bg-white/10 rounded-full blur-2xl absolute"></div>
-<div class="bg-white/20 backdrop-blur-md rounded-2xl w-4/5 h-3/4 flex items-center justify-center border border-white/30 shadow-2xl transform rotate-12 group-hover:rotate-6 transition-transform duration-500">
-<span class="material-symbols-outlined text-6xl text-white opacity-80" data-icon="monitoring">monitoring</span>
-</div>
-</div>
-<div class="z-10 relative mt-auto self-start">
-<span class="inline-flex items-center gap-2 font-bold group-hover:gap-4 transition-all">
-                        Download <span class="material-symbols-outlined" data-icon="download">download</span>
-</span>
-</div>
-</div>
-<!-- Portfolio (Square card) -->
-<div class="md:col-span-4 bg-[#E5E7EB] rounded-xl-card p-8 flex flex-col justify-between cursor-pointer hover:bg-slate-300 transition-colors">
-<div>
-<h2 class="text-2xl font-bold text-on-surface mb-2">Portfolio</h2>
-<p class="text-slate-600">The Forge Home. Curated engineering showcase.</p>
-</div>
-<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm self-end">
-<span class="material-symbols-outlined text-on-surface" data-icon="north_east">north_east</span>
-</div>
-</div>
-<!-- Stats/Extra (Square card) -->
-<div class="md:col-span-4 bg-white border border-slate-200 rounded-xl-card p-8 flex flex-col justify-center items-center text-center">
-<h3 class="text-6xl font-black text-primary tracking-tighter mb-2">1M+</h3>
-<p class="text-slate-500 font-medium uppercase tracking-widest text-sm">Downloads</p>
-<p class="text-sm text-slate-400 mt-4 px-4">Across the entire Forge Ecosystem.</p>
-</div>
-</section>
+
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto w-full flex flex-col gap-24">
+    <!-- Hero Section -->
+    <header class="text-center max-w-4xl mx-auto flex flex-col items-center gap-8 mt-12">
+        <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black tracking-[0.3em] uppercase border border-primary/20">
+            Next-Gen Software Forge
+        </span>
+        <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-on-surface leading-[0.9]">
+            Forging Next-Gen <br/><span class="text-primary italic">Software</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-600 font-medium tracking-tight max-w-2xl">
+            Beautifully Crafted, Powerfully Engineered. Privacy-first experiences for the modern power user.
+        </p>
+        <div class="flex gap-4">
+            <a href="#ecosystem" class="bg-on-surface text-surface rounded-full px-10 py-4 font-black text-lg hover:bg-black transition-colors active:scale-95 duration-200 shadow-xl">
+                Explore Ecosystem
+            </a>
+        </div>
+    </header>
+
+    <!-- Bento Grid Ecosystem -->
+    <section id="ecosystem" class="grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
+        <!-- WinForge -->
+        <div onclick="window.open('https://github.com/mrdarksidetm/winforge', '_blank')" class="md:col-span-8 bg-surface-container rounded-xl-card p-12 flex flex-col justify-between overflow-hidden relative group cursor-pointer hover:shadow-2xl transition-all duration-500 min-h-[450px]">
+            <div class="z-10 relative max-w-lg">
+                <span class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-black text-primary mb-6 uppercase tracking-[0.2em] border border-primary/10">
+                    <span class="material-symbols-outlined text-[16px]">desktop_windows</span> Optimization
+                </span>
+                <h2 class="text-4xl md:text-5xl font-black text-on-surface mb-4 tracking-tighter">WinForge v5.0</h2>
+                <p class="text-slate-600 font-semibold text-lg leading-relaxed">
+                    Windows 11 elevated. Reclaim your privacy with AI/Recall purge, boost performance, and automate your workflow with professional precision.
+                </p>
+            </div>
+            <div class="absolute right-0 bottom-0 w-3/4 h-full bg-cover bg-center opacity-20 group-hover:opacity-40 transition-opacity duration-700" style="background-image: url('./winforge-logo.png'); background-size: contain; background-repeat: no-repeat; background-position: right bottom;"></div>
+            <div class="z-10 relative mt-auto">
+                <span class="inline-flex items-center gap-3 text-primary font-black text-lg group-hover:gap-5 transition-all">
+                    Explore Forge <span class="material-symbols-outlined font-black">arrow_forward</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Wallet (Tall card) -->
+        <div onclick="window.open('https://github.com/mrdarksidetm/wallet-flutter', '_blank')" class="md:col-span-4 md:row-span-1 bg-primary rounded-xl-card p-12 flex flex-col justify-between text-white overflow-hidden relative group cursor-pointer hover:shadow-2xl transition-all duration-500 shadow-primary/30 min-h-[450px]">
+            <div class="z-10 relative">
+                <span class="inline-flex items-center gap-2 bg-black/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-black mb-6 uppercase tracking-[0.2em] border border-white/10">
+                    <span class="material-symbols-outlined text-[16px]">account_balance_wallet</span> Finance
+                </span>
+                <h2 class="text-4xl font-black mb-4 tracking-tighter">Wallet</h2>
+                <p class="text-blue-100/90 font-semibold text-lg leading-relaxed">
+                    Premium local-first finance dashboard. 100% offline, designed with Material 3 precision.
+                </p>
+            </div>
+            <div class="relative w-full aspect-square mt-4 flex justify-center items-center z-10 scale-110">
+                <img src="./wallet-logo.svg" alt="wallet" class="w-3/4 h-3/4 drop-shadow-2xl transform rotate-12 group-hover:rotate-3 transition-transform duration-700" />
+            </div>
+            <div class="z-10 relative mt-auto">
+                <span class="inline-flex items-center gap-3 font-black text-lg group-hover:gap-5 transition-all">
+                    Download <span class="material-symbols-outlined font-black">download</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="md:col-span-4 bg-white border border-slate-200 rounded-xl-card p-12 flex flex-col justify-center items-center text-center group hover:border-primary/20 transition-colors">
+            <h3 class="text-7xl font-black text-primary tracking-tighter mb-4 group-hover:scale-110 transition-transform duration-500">1M+</h3>
+            <p class="text-slate-500 font-black uppercase tracking-[0.2em] text-xs">Total Impact</p>
+            <p class="text-sm font-semibold text-slate-400 mt-6 max-w-[200px]">Empowering power users across the entire Forge Ecosystem.</p>
+        </div>
+
+        <!-- Portfolio -->
+        <div onclick="window.open('https://github.com/mrdarksidetm', '_blank')" class="md:col-span-8 bg-[#E2E2E6] rounded-xl-card p-12 flex flex-col md:flex-row justify-between items-center cursor-pointer hover:bg-slate-300 transition-all duration-500 group">
+            <div class="max-w-md">
+                <h2 class="text-4xl font-black text-on-surface mb-4 tracking-tighter">The Source</h2>
+                <p class="text-slate-600 font-semibold text-lg">Browse the curated engineering showcase. Every line of code is forged for performance and elegance.</p>
+            </div>
+            <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-xl self-center md:self-auto mt-8 md:mt-0 group-hover:rotate-12 transition-transform duration-500">
+                <span class="material-symbols-outlined text-4xl text-on-surface font-black">north_east</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Refined from about_page.dart) -->
+    <section id="about" class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center pt-12 border-t border-slate-200/50">
+        <div class="flex flex-col gap-8">
+            <div class="w-max px-4 py-1.5 rounded-full bg-surface-container text-primary font-black text-[10px] uppercase tracking-[0.3em] border border-primary/5">
+                The Artisan
+            </div>
+            <h2 class="text-5xl font-black text-on-surface leading-[1.1] tracking-tighter">Built by the community, <br/>for the community.</h2>
+            <p class="text-xl text-slate-600 font-semibold leading-relaxed">
+                Project Wallet and the Forge Ecosystem started with a simple vision: software shouldn't be complicated, expensive, or invasive. 
+                We build tools that respect your privacy, feel native to your device, and look beautiful enough to use every day. <span class="emoji text-primary">❤️</span>
+            </p>
+            <div class="flex items-center gap-10">
+                <div class="flex flex-col">
+                    <span class="text-4xl font-black text-primary tracking-tighter italic">120+</span>
+                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1">FPS Target</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-4xl font-black text-primary tracking-tighter italic">100%</span>
+                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1">Offline First</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-4xl font-black text-primary tracking-tighter italic">0</span>
+                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1">Trackers</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-surface-container rounded-xl-card p-12 relative overflow-hidden group border border-primary/5 shadow-xl shadow-primary/5">
+            <div class="absolute -right-20 -top-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700"></div>
+            <div class="relative z-10 flex flex-col gap-8">
+                <blockquote class="text-3xl font-black text-on-surface italic leading-tight tracking-tighter">
+                    "Design is not just what it looks like and feels like. Design is how it works."
+                </blockquote>
+                <div class="flex items-center gap-5">
+                    <div class="w-16 h-16 rounded-full border-2 border-primary/20 p-1 group-hover:border-primary transition-colors duration-500">
+                        <img src="./developer.png" alt="developer" class="w-full h-full rounded-full object-cover shadow-lg" />
+                    </div>
+                    <div>
+                        <p class="text-xl font-black text-on-surface tracking-tight">Abhijeet Yadav</p>
+                        <p class="text-sm font-bold text-primary uppercase tracking-widest">Creator & Engineer</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 mt-4">
+                    <a href="https://github.com/mrdarksidetm" target="_blank" class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-on-surface shadow-sm hover:text-primary transition-colors">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                    <a href="mailto:contact.dsidetm@gmail.com" class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-on-surface shadow-sm hover:text-primary transition-colors font-black">
+                        @
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
+
 <!-- Footer -->
-<footer class="w-full rounded-t-[24px] bg-slate-50 border-t border-slate-200 mt-auto">
-<div class="max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="text-xl font-black text-slate-900">The Forge</div>
-<div class="flex flex-wrap justify-center gap-6 font-['Public_Sans'] text-sm tracking-normal">
-<a class="text-slate-500 hover:text-slate-900 hover:underline transition-all opacity-100 hover:opacity-80 duration-150" href="#">Privacy</a>
-<a class="text-slate-500 hover:text-slate-900 hover:underline transition-all opacity-100 hover:opacity-80 duration-150" href="#">Terms</a>
-<a class="text-slate-500 hover:text-slate-900 hover:underline transition-all opacity-100 hover:opacity-80 duration-150" href="#">Documentation</a>
-<a class="text-slate-500 hover:text-slate-900 hover:underline transition-all opacity-100 hover:opacity-80 duration-150" href="#">Contact</a>
-</div>
-<div class="text-sm text-slate-500 font-medium">© 2024 The Forge Ecosystem. Curated Engineering.</div>
-</div>
+<footer class="w-full bg-slate-50 border-t border-slate-200 mt-auto py-16">
+    <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-10">
+        <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white p-2">
+                <img src="./logo.svg" alt="logo" class="w-full h-full" />
+            </div>
+            <div class="text-2xl font-black text-slate-900 tracking-tighter">FORGE</div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-10 text-sm font-black uppercase tracking-[0.2em] text-slate-400">
+            <a class="hover:text-primary transition-colors" href="https://github.com/mrdarksidetm/wallet-flutter/blob/main/PRIVACY_POLICY.md">Privacy</a>
+            <a class="hover:text-primary transition-colors" href="https://github.com/mrdarksidetm/winforge/tree/Beta/docs">Docs</a>
+            <a class="hover:text-primary transition-colors" href="https://github.com/mrdarksidetm">GitHub</a>
+            <a class="hover:text-primary transition-colors" href="mailto:contact.dsidetm@gmail.com">Contact</a>
+        </div>
+        <div class="text-xs text-slate-400 font-black uppercase tracking-[0.2em]">
+            © 2026 THE FORGE ECOSYSTEM <span class="emoji ml-2 text-primary">✨</span>
+        </div>
+    </div>
 </footer>
-</body></html>
+</body>
+</html>
