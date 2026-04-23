@@ -8,11 +8,17 @@
   --color-income: #10B981;
   --color-expense: #EF4444;
 
-  --font-sans: "Google Sans Flex", ui-sans-serif, system-ui, sans-serif;
+  --color-surface: #FBF9F9;
+  --color-on-surface: #313234;
+  --color-surface-container: #EFEDEE;
+
+  --font-sans: "Google Sans Flex", "Inter", ui-sans-serif, system-ui, sans-serif;
   
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-  --radius-3xl: 2rem;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-3xl: 32px;
 }
 
 :root {
@@ -21,8 +27,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  background-color: #FBF9F9;
-  color: #313234;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
