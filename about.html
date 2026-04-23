@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>About the Artisan</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0061A4',
+                        'primary-dim': '#004689',
+                        surface: '#FBF9F9',
+                        'on-surface': '#313234',
+                        'surface-container': '#EFEDEE'
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px",
+                        'xl-card': '24px'
+                    },
+                    fontFamily: {
+                        sans: ["Google Sans Flex", "Inter", "sans-serif"],
+                        emoji: ["iOS Emoji", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: 'Google Sans Flex';
+            src: url('https://mrdarksidetm.github.io/Wallet-Flutter/fonts/google-sans-flex.ttf') format('truetype');
+            font-weight: 100 900;
+        }
+        @font-face {
+            font-family: 'iOS Emoji';
+            src: url('https://mrdarksidetm.github.io/Wallet-Flutter/fonts/ios-emoji.ttf') format('truetype');
+        }
+        body {
+            background-color: #FBF9F9;
+            color: #313234;
+            font-family: 'Google Sans Flex', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .emoji { font-family: 'iOS Emoji', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 97, 164, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 97, 164, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-grid">
+<!-- TopNavBar -->
+
+<nav class="fixed top-0 w-full z-50 bg-[#FBF9F9]/80 backdrop-blur-md border-b border-slate-200/50">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 p-2">
+                <img src="https://mrdarksidetm.github.io/Wallet-Flutter/logo.svg" alt="logo" class="w-full h-full" />
+            </div>
+            <div class="text-2xl font-black tracking-tighter text-slate-900 uppercase">FORGE</div>
+        </div>
+        <div class="hidden md:flex items-center gap-6 font-medium tracking-tight">
+            <a class="text-slate-600 hover:text-primary transition-all px-3 py-2" href="https://mrdarksidetm.github.io/">Ecosystem</a>
+            <a class="text-slate-600 hover:text-primary transition-all px-3 py-2" href="https://mrdarksidetm.github.io/WinForge/">WinForge</a>
+            <a class="text-slate-600 hover:text-primary transition-all px-3 py-2" href="https://mrdarksidetm.github.io/Wallet-Flutter/">Wallet</a>
+            <a class="text-primary font-bold border-b-2 border-primary pb-1" href="https://mrdarksidetm.github.io/about.html">About</a>
+        </div>
+        <a href="mailto:contact.dsidetm@gmail.com" class="bg-on-surface text-surface font-bold rounded-full px-6 py-2.5 active:scale-95 duration-200 transition-transform shadow-lg">
+            Connect
+        </a>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main class="flex-grow max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-24 w-full flex flex-col gap-24">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 flex flex-col gap-6">
+<h2 class="text-xl md:text-2xl text-[#0061A4] font-bold tracking-wide uppercase">
+                    Abhijeet Yadav
+                </h2>
+<h1 class="font-headline font-black text-5xl md:text-7xl text-[#313234] leading-tight tracking-tighter">
+                    The Artisan behind The Forge
+                </h1>
+<p class="text-xl md:text-2xl text-[#44474E] font-medium max-w-2xl mt-4 leading-relaxed">
+                    Lead Forge Engineer &amp; UI Craftsman. Blending rigorous logic with expressive geometry to build digital experiences that feel handcrafted.
+                </p>
+<div class="mt-6 flex gap-4">
+<a class="bg-[#0061A4] text-white px-8 py-4 rounded-full font-bold hover:bg-opacity-90 transition-colors" href="#">
+                        View Projects
+                    </a>
+<a class="bg-[#EFEDEE] text-[#313234] px-8 py-4 rounded-full font-bold hover:bg-opacity-80 transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">download</span> Resume
+                    </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] w-full rounded-[24px] overflow-hidden bg-[#EFEDEE]">
+<img alt="" class="w-full h-full object-cover" data-alt="Portrait of a modern software engineer in a well-lit minimalist studio, soft natural light casting gentle shadows, high-end editorial photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV8KaQEjtqnSaIGStAvvbU_jOzYbDcDMMzv3FF2rn9VClc5Eqqz5Nor9qn3QpBZpWvYy4srsc_bI7TRrI1JpKvpnc3Epdcm_07Wp-qN8zc3kJD1n89kN-0fBfAjJS-6p61MhOB9Q4WYK8h5wvWgXbRtuXvDh_zlSyh40RB3rfJZ3PkwTvhJ3ZQRcWUlTHjvw14Vx8tz2-nK0uj9hfs28GCENlbHSkoSgQ73gNQd0k9t3_u3AafWm2Gykqn_baNNh5l03vFxa_Iybg"/>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-[#0061A4] rounded-full mix-blend-multiply opacity-10 blur-2xl"></div>
+</div>
+</section>
+<!-- Philosophies Section -->
+<section class="flex flex-col gap-12">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline font-black text-4xl text-[#313234] tracking-tight">Core Philosophies</h2>
+<div class="w-16 h-1 bg-[#0061A4] rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-[#EFEDEE] rounded-[24px] p-10 flex flex-col gap-6">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-[#0061A4] shadow-sm">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">speed</span>
+</div>
+<h3 class="font-headline font-bold text-2xl text-[#313234]">Performance first</h3>
+<p class="text-[#44474E] leading-relaxed text-lg">
+                        Fluidity is a feature. Every interaction, every transition is meticulously optimized to hit that buttery smooth 120 FPS target. No compromises.
+                    </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-[#EFEDEE] rounded-[24px] p-10 flex flex-col gap-6">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-[#0061A4] shadow-sm">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">shield_lock</span>
+</div>
+<h3 class="font-headline font-bold text-2xl text-[#313234]">Local-first privacy</h3>
+<p class="text-[#44474E] leading-relaxed text-lg">
+                        Your data belongs to you. Architecture designed to keep logic and storage on the edge, ensuring absolute privacy and offline reliability.
+                    </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-[#EFEDEE] rounded-[24px] p-10 flex flex-col gap-6">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-[#0061A4] shadow-sm">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">design_services</span>
+</div>
+<h3 class="font-headline font-bold text-2xl text-[#313234]">Design is how it works</h3>
+<p class="text-[#44474E] leading-relaxed text-lg">
+                        Merging rigid logic with expressive aesthetics. A beautiful interface is meaningless if the underlying architecture doesn't support the intent.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Technical Stack Section -->
+<section class="flex flex-col gap-10">
+<div class="flex flex-col gap-2 items-center text-center">
+<h2 class="font-headline font-black text-4xl text-[#313234] tracking-tight">The Toolkit</h2>
+<p class="text-[#44474E] text-lg mt-2 max-w-xl">Weapons of choice for crafting digital excellence.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+<div class="bg-[#EFEDEE] text-[#0061A4] px-8 py-4 rounded-full font-bold text-xl flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                    Flutter
+                </div>
+<div class="bg-[#EFEDEE] text-[#0061A4] px-8 py-4 rounded-full font-bold text-xl flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">code</span>
+                    Dart
+                </div>
+<div class="bg-[#EFEDEE] text-[#0061A4] px-8 py-4 rounded-full font-bold text-xl flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                    PowerShell
+                </div>
+<div class="bg-[#EFEDEE] text-[#0061A4] px-8 py-4 rounded-full font-bold text-xl flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">javascript</span>
+                    React
+                </div>
+<div class="bg-[#EFEDEE] text-[#0061A4] px-8 py-4 rounded-full font-bold text-xl flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">database</span>
+                    Isar
+                </div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+
+<footer class="w-full bg-slate-50 border-t border-slate-200 mt-auto py-16">
+    <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-10">
+        <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white p-2">
+                <img src="https://mrdarksidetm.github.io/Wallet-Flutter/logo.svg" alt="logo" class="w-full h-full" />
+            </div>
+            <div class="text-2xl font-black text-slate-900 tracking-tighter uppercase">FORGE</div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-10 text-sm font-black uppercase tracking-[0.2em] text-slate-400">
+            <a class="hover:text-primary transition-colors" href="https://github.com/mrdarksidetm">GitHub</a>
+            <a class="hover:text-primary transition-colors" href="mailto:contact.dsidetm@gmail.com">Contact</a>
+        </div>
+        <div class="text-xs text-slate-400 font-black uppercase tracking-[0.2em]">
+            © 2026 About the Artisan <span class="emoji ml-2 text-primary">✨</span>
+        </div>
+    </div>
+</footer>
+
+</body></html>
