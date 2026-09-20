@@ -112,21 +112,24 @@
       width: 42px;
       height: 42px;
       border-radius: 12px;
-      background: var(--vd-color-surface);
+      background: var(--vd-color-surface-elevated);
       border: 1px solid var(--vd-color-stroke);
       padding: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: transform 0.2s ease, border-color 0.2s ease;
+      flex-shrink: 0;
     }
     .vd-brand:hover .vd-brand-logo {
       transform: scale(1.05);
       border-color: var(--vd-color-primary);
     }
     .vd-brand-logo img {
-      max-width: 100%;
-      max-height: 100%;
+      width: 24px;
+      height: 24px;
+      max-width: 24px;
+      max-height: 24px;
       object-fit: contain;
     }
     .vd-brand-name {
@@ -155,10 +158,23 @@
       font-weight: 600;
       color: var(--vd-color-secondary-text);
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       transition: color 0.2s ease;
     }
     .vd-nav-link:hover {
       color: #ffffff;
+    }
+    .vd-github-icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .vd-nav-link:hover .vd-github-icon {
+      transform: scale(1.1);
     }
     .vd-btn-connect {
       padding: 8px 18px;
@@ -345,7 +361,7 @@
       width: 54px;
       height: 54px;
       border-radius: 16px;
-      background: var(--vd-color-bg);
+      background: var(--vd-color-surface-elevated);
       border: 1px solid var(--vd-color-stroke);
       display: flex;
       align-items: center;
@@ -353,9 +369,11 @@
       padding: 10px;
       flex-shrink: 0;
     }
-    .vd-card-icon img {
-      max-width: 100%;
-      max-height: 100%;
+    .vd-card-icon img, .vd-card-icon svg {
+      width: 32px;
+      height: 32px;
+      max-width: 32px;
+      max-height: 32px;
       object-fit: contain;
     }
     .vd-card-title-group {
@@ -429,7 +447,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 11px 14px;
+      gap: 6px;
+      padding: 11px 16px;
       font-size: 13px;
       font-weight: 700;
       border-radius: var(--vd-size-pill-radius);
@@ -542,21 +561,13 @@
       color: var(--vd-color-secondary-text);
       text-decoration: none;
       font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       transition: color 0.2s ease;
     }
     .vd-footer-link:hover {
       color: #ffffff;
-    }
-
-    .vd-github svg {
-      width: 24px;
-      height: 24px;
-      fill: var(--vd-color-secondary-text);
-      transition: fill 0.2s ease, transform 0.2s ease;
-    }
-    .vd-github:hover svg {
-      fill: #ffffff;
-      transform: scale(1.1);
     }
   </style>
 </head>
@@ -583,8 +594,9 @@
         <a href="#featured" class="vd-nav-link">Products</a>
         <a href="#ecosystem" class="vd-nav-link">Live Repos</a>
         <a href="about.html" class="vd-nav-link">About</a>
-        <a href="https://github.com/mrdarksidetm" target="_blank" rel="noopener noreferrer" class="vd-github" title="GitHub Profile">
-          <svg viewBox="0 0 24 24"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"/></svg>
+        <a href="https://github.com/mrdarksidetm" target="_blank" rel="noopener noreferrer" class="vd-nav-link">
+          <svg class="vd-github-icon" viewBox="0 0 24 24"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"/></svg>
+          <span>GitHub</span>
         </a>
         <a href="mailto:contact.dsidetm@gmail.com" class="vd-btn-connect">Connect</a>
       </nav>
@@ -621,7 +633,7 @@
     </div>
 
     <!-- Featured Flagship Products Grid -->
-    <section id="featured" class="vd-product-grid" id="productsGrid">
+    <section id="featured" class="vd-product-grid">
       <!-- 1. VectorDrawable to SVG -->
       <article class="vd-card" data-category="web">
         <div class="vd-card-header">
@@ -644,7 +656,10 @@
         </div>
         <div class="vd-card-actions">
           <a href="https://mrdarksidetm.github.io/vector-drawable-nextjs/" target="_blank" rel="noopener noreferrer" class="vd-btn-primary">Launch Online</a>
-          <a href="https://github.com/mrdarksidetm/vector-drawable-nextjs" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost" title="GitHub Repo">GitHub</a>
+          <a href="https://github.com/mrdarksidetm/vector-drawable-nextjs" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost">
+            <svg class="vd-github-icon" viewBox="0 0 24 24"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"/></svg>
+            <span>GitHub</span>
+          </a>
         </div>
       </article>
 
@@ -670,7 +685,10 @@
         </div>
         <div class="vd-card-actions">
           <a href="https://mrdarksidetm.github.io/Wallet/" class="vd-btn-primary">Explore Wallet</a>
-          <a href="https://github.com/mrdarksidetm/Wallet" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost" title="GitHub Repo">GitHub</a>
+          <a href="https://github.com/mrdarksidetm/Wallet" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost">
+            <svg class="vd-github-icon" viewBox="0 0 24 24"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"/></svg>
+            <span>GitHub</span>
+          </a>
         </div>
       </article>
 
@@ -678,7 +696,7 @@
       <article class="vd-card" data-category="flutter">
         <div class="vd-card-header">
           <div class="vd-card-icon">
-            <img src="public/wallet-logo.svg" alt="Wallet-Flutter" />
+            <img src="public/wallet-flutter-logo.svg" alt="Wallet-Flutter" />
           </div>
           <div class="vd-card-title-group">
             <h2 class="vd-card-title">Wallet-Flutter</h2>
@@ -696,7 +714,10 @@
         </div>
         <div class="vd-card-actions">
           <a href="https://mrdarksidetm.github.io/Wallet-Flutter/" class="vd-btn-primary">Explore Showcase</a>
-          <a href="https://github.com/mrdarksidetm/Wallet-Flutter" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost" title="GitHub Repo">GitHub</a>
+          <a href="https://github.com/mrdarksidetm/Wallet-Flutter" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost">
+            <svg class="vd-github-icon" viewBox="0 0 24 24"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"/></svg>
+            <span>GitHub</span>
+          </a>
         </div>
       </article>
 
@@ -704,7 +725,7 @@
       <article class="vd-card" data-category="android">
         <div class="vd-card-header">
           <div class="vd-card-icon">
-            <img src="public/wasm-logo.png" alt="Wasm" />
+            <img src="public/wasm-logo.svg" alt="Wasm" />
           </div>
           <div class="vd-card-title-group">
             <h2 class="vd-card-title">Wasm</h2>
@@ -722,7 +743,10 @@
         </div>
         <div class="vd-card-actions">
           <a href="https://mrdarksidetm.github.io/wasm/" class="vd-btn-primary">Explore Wasm</a>
-          <a href="https://github.com/mrdarksidetm/wasm" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost" title="GitHub Repo">GitHub</a>
+          <a href="https://github.com/mrdarksidetm/wasm" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost">
+            <svg class="vd-github-icon" viewBox="0 0 24 24"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"/></svg>
+            <span>GitHub</span>
+          </a>
         </div>
       </article>
 
@@ -748,7 +772,10 @@
         </div>
         <div class="vd-card-actions">
           <a href="https://mrdarksidetm.github.io/Android-Battery-Unrestricted-Checker/" class="vd-btn-primary">Explore ABUC</a>
-          <a href="https://github.com/mrdarksidetm/Android-Battery-Unrestricted-Checker" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost" title="GitHub Repo">GitHub</a>
+          <a href="https://github.com/mrdarksidetm/Android-Battery-Unrestricted-Checker" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost">
+            <svg class="vd-github-icon" viewBox="0 0 24 24"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"/></svg>
+            <span>GitHub</span>
+          </a>
         </div>
       </article>
 
@@ -756,7 +783,7 @@
       <article class="vd-card" data-category="tools">
         <div class="vd-card-header">
           <div class="vd-card-icon">
-            <img src="public/winforge-logo.png" alt="WinForge" />
+            <img src="public/winforge-logo.svg" alt="WinForge" />
           </div>
           <div class="vd-card-title-group">
             <h2 class="vd-card-title">WinForge</h2>
@@ -774,7 +801,10 @@
         </div>
         <div class="vd-card-actions">
           <a href="https://mrdarksidetm.github.io/WinForge/" target="_blank" rel="noopener noreferrer" class="vd-btn-primary">Launch WinForge</a>
-          <a href="https://github.com/mrdarksidetm/WinForge" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost" title="GitHub Repo">GitHub</a>
+          <a href="https://github.com/mrdarksidetm/WinForge" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost">
+            <svg class="vd-github-icon" viewBox="0 0 24 24"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"/></svg>
+            <span>GitHub</span>
+          </a>
         </div>
       </article>
     </section>
@@ -791,14 +821,13 @@
         </div>
       </div>
       <div class="vd-product-grid" id="liveReposGrid">
-        <!-- Dynamically populated via GitHub API -->
         <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--vd-color-secondary-text); font-family: var(--vd-font-mono);">
           Fetching live repositories from @mrdarksidetm...
         </div>
       </div>
     </section>
 
-    <!-- Terminal Command & Credits Card -->
+    <!-- Terminal Command Card -->
     <section class="vd-cli-card">
       <div class="vd-cli-row">
         <div>
@@ -818,7 +847,10 @@
         <span>© 2026 Abhijeet Yadav (<b>MrDarksideTM</b>). All projects built with Material 3 Expressive standards.</span>
       </div>
       <div class="vd-footer-links">
-        <a href="https://github.com/mrdarksidetm" target="_blank" rel="noopener noreferrer" class="vd-footer-link">GitHub</a>
+        <a href="https://github.com/mrdarksidetm" target="_blank" rel="noopener noreferrer" class="vd-footer-link">
+          <svg class="vd-github-icon" viewBox="0 0 24 24"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"/></svg>
+          <span>GitHub</span>
+        </a>
         <a href="https://twitter.com/mrdarksidetm" target="_blank" rel="noopener noreferrer" class="vd-footer-link">Twitter / X</a>
         <a href="mailto:contact.dsidetm@gmail.com" class="vd-footer-link">Email</a>
         <a href="about.html" class="vd-footer-link">About Atelier</a>
@@ -827,7 +859,6 @@
   </div>
 
   <script>
-    // 1-Tap Copy CLI snippet
     function copyCliCommand() {
       navigator.clipboard.writeText('npx vector-drawable-svg my-drawable.xml out.svg').then(() => {
         const badge = document.getElementById('copyBadge');
@@ -840,7 +871,6 @@
       });
     }
 
-    // Filter controls
     const filterButtons = document.querySelectorAll('.vd-segment-btn');
     const cards = document.querySelectorAll('#featured .vd-card');
     const searchInput = document.getElementById('projectSearch');
@@ -870,7 +900,6 @@
         card.style.display = (matchesCategory && matchesSearch) ? 'flex' : 'none';
       });
 
-      // Also filter dynamic live repos
       const dynamicCards = document.querySelectorAll('#liveReposGrid .vd-card');
       dynamicCards.forEach(card => {
         const text = card.innerText.toLowerCase();
@@ -879,8 +908,6 @@
       });
     }
 
-    // Dynamic Live GitHub Repositories Auto-Sync
-    // Automatically fetches all public repos from mrdarksidetm on GitHub
     const USERNAME = 'mrdarksidetm';
     const GITHUB_API_URL = `https://api.github.com/users/${USERNAME}/repos?sort=updated&per_page=100`;
     const KNOWN_FLAGSHIPS = [
@@ -902,12 +929,11 @@
         const cached = localStorage.getItem('mrdarksidetm_repos_cache');
         const cacheTime = localStorage.getItem('mrdarksidetm_repos_time');
 
-        // Use cache if fresh (< 10 minutes)
         if (cached && cacheTime && (Date.now() - parseInt(cacheTime) < 600000)) {
           repos = JSON.parse(cached);
         } else {
           const res = await fetch(GITHUB_API_URL);
-          if (!res.ok) throw new Error('GitHub API rate limit or error');
+          if (!res.ok) throw new Error('GitHub API error');
           repos = await res.json();
           localStorage.setItem('mrdarksidetm_repos_cache', JSON.stringify(repos));
           localStorage.setItem('mrdarksidetm_repos_time', Date.now().toString());
@@ -916,13 +942,9 @@
         renderLiveRepos(repos);
         if (status) status.innerHTML = `<span>⚡ Auto-synced with GitHub API (${repos.length} repos)</span>`;
       } catch (err) {
-        console.warn('Fallback to cached or fallback repos:', err);
+        console.warn('Using cache/fallback:', err);
         const cached = localStorage.getItem('mrdarksidetm_repos_cache');
-        if (cached) {
-          renderLiveRepos(JSON.parse(cached));
-        } else {
-          renderFallbackRepos();
-        }
+        if (cached) renderLiveRepos(JSON.parse(cached));
       }
     }
 
@@ -930,7 +952,6 @@
       const grid = document.getElementById('liveReposGrid');
       grid.innerHTML = '';
 
-      // Filter out forks or profile repo if desired, or sort by recent updates
       const nonFlagships = repos.filter(r => !r.fork && r.name !== 'mrdarksidetm');
 
       if (nonFlagships.length === 0) {
@@ -968,42 +989,16 @@
           </div>
           <div class="vd-card-actions">
             ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" rel="noopener noreferrer" class="vd-btn-primary">View Project</a>` : ''}
-            <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost" style="flex: ${repo.homepage ? '0' : '1'}; text-align: center;">View on GitHub</a>
+            <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost" style="flex: ${repo.homepage ? '0' : '1'}; text-align: center;">
+              <svg class="vd-github-icon" viewBox="0 0 24 24"><path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"/></svg>
+              <span>GitHub</span>
+            </a>
           </div>
         `;
         grid.appendChild(card);
       });
     }
 
-    function renderFallbackRepos() {
-      const grid = document.getElementById('liveReposGrid');
-      grid.innerHTML = `
-        <article class="vd-card">
-          <div class="vd-card-header">
-            <div class="vd-card-icon">
-              <img src="public/favicon.svg" alt="June" />
-            </div>
-            <div class="vd-card-title-group">
-              <h3 class="vd-card-title">June</h3>
-              <div class="vd-card-category">Multimedia Journal • FOSS</div>
-            </div>
-          </div>
-          <p class="vd-card-desc">
-            An open-source multimedia journal for expressive, private journaling, with 100% data ownership.
-          </p>
-          <div class="vd-card-tags">
-            <span class="vd-card-tag">Kotlin</span>
-            <span class="vd-card-tag">Compose</span>
-            <span class="vd-card-tag">Privacy</span>
-          </div>
-          <div class="vd-card-actions">
-            <a href="https://github.com/mrdarksidetm/June" target="_blank" rel="noopener noreferrer" class="vd-btn-ghost" style="width: 100%; text-align: center;">View on GitHub</a>
-          </div>
-        </article>
-      `;
-    }
-
-    // Initialize live repo auto-sync
     fetchLiveRepos();
   </script>
 </body>
