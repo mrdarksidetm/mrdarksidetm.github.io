@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <radialGradient id="emojiGrad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="50%" stop-color="#FFCA28"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </radialGradient>
+    <radialGradient id="eyeGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#4E342E"/>
+      <stop offset="100%" stop-color="#2D1D16"/>
+    </radialGradient>
+  </defs>
+  <circle cx="24" cy="24" r="21" fill="url(#emojiGrad)"/>
+  <ellipse cx="16" cy="18" rx="3" ry="4.5" fill="url(#eyeGrad)"/>
+  <ellipse cx="32" cy="18" rx="3" ry="4.5" fill="url(#eyeGrad)"/>
+  <circle cx="15" cy="16.5" r="1" fill="#FFFFFF"/>
+  <circle cx="31" cy="16.5" r="1" fill="#FFFFFF"/>
+  <path d="M14 26 C16 35, 32 35, 34 26 C30 29, 18 29, 14 26 Z" fill="#D84315"/>
+  <path d="M16 26.5 C19 32, 29 32, 32 26.5 C28 28.5, 20 28.5, 16 26.5 Z" fill="#FFFFFF"/>
+</svg>

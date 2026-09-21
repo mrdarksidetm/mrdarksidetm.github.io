@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="gboardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C5DF0"/>
+      <stop offset="100%" stop-color="#2D3BBA"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="8" width="40" height="32" rx="8" fill="url(#gboardGrad)"/>
+  <rect x="9" y="14" width="5" height="5" rx="1.5" fill="#FFFFFF" opacity="0.95"/>
+  <rect x="17" y="14" width="5" height="5" rx="1.5" fill="#FFFFFF" opacity="0.95"/>
+  <rect x="25" y="14" width="5" height="5" rx="1.5" fill="#FFFFFF" opacity="0.95"/>
+  <rect x="33" y="14" width="5" height="5" rx="1.5" fill="#FFFFFF" opacity="0.95"/>
+  <rect x="9" y="22" width="5" height="5" rx="1.5" fill="#FFFFFF" opacity="0.95"/>
+  <rect x="17" y="22" width="5" height="5" rx="1.5" fill="#FFFFFF" opacity="0.95"/>
+  <rect x="25" y="22" width="5" height="5" rx="1.5" fill="#FFFFFF" opacity="0.95"/>
+  <rect x="33" y="22" width="5" height="5" rx="1.5" fill="#FFFFFF" opacity="0.95"/>
+  <rect x="14" y="30" width="20" height="4.5" rx="2" fill="#FFFFFF" opacity="0.95"/>
+</svg>
